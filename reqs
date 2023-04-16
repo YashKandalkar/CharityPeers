@@ -1,0 +1,11 @@
+# user account - 
+	1. check account available in metamask
+	2. show profile page:
+		a. account name, address, balance
+		b. charities created (collected ETH, transferred by whom)
+		c. history of donations to accounts (charities)
+		d. 
+		
+		
+--------------
+UserDetails.deployed().then((i) => {app = i})
