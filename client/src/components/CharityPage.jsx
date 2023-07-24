@@ -73,9 +73,22 @@ const CharityPage = () => {
               className="flex flex-row w-full justify-evenly bg-gray-100 py-2 mt-4 border-gray-400"
               style={{ borderWidth: 1 }}
             >
-              <span>
+              <span className="flex gap-1">
                 Goal:{" "}
-                <span className="font-bold">{charity.goalAmount}ETH</span>{" "}
+                <EthToRealTooltip
+                  value={state.web3.utils.fromWei(
+                    charity.goalAmount.toString(),
+                    "ether"
+                  )}
+                >
+                  <span className="font-bold">
+                    {state.web3.utils.fromWei(
+                      charity.goalAmount.toString(),
+                      "ether"
+                    )}
+                    ETH
+                  </span>
+                </EthToRealTooltip>{" "}
               </span>
               <span>
                 {" "}
@@ -108,7 +121,10 @@ const CharityPage = () => {
                   charity.totalDonationAmount.toString(),
                   "ether"
                 ) /
-                  charity.goalAmount) *
+                  state.web3.utils.fromWei(
+                    charity.goalAmount.toString(),
+                    "ether"
+                  )) *
                 100
               ).toFixed(2)}
               className="mt-1"

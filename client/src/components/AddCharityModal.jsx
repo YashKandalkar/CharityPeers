@@ -2,6 +2,7 @@ import { faHandsHelping, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AddCharityForm from "./AddCharityForm";
 import { useEth } from "../contexts/EthContext";
+import Web3 from "web3";
 
 export default function AddCharityModal({ showModal, setShowModal }) {
   const { state } = useEth();
@@ -18,7 +19,7 @@ export default function AddCharityModal({ showModal, setShowModal }) {
         data.MobileNumber,
         data.Address,
         0,
-        data.Goal,
+        Web3.utils.toWei(data.Goal.toString(), "ether"),
         0
       )
       .send({ from: state.accounts[0] }, (err, res) => {

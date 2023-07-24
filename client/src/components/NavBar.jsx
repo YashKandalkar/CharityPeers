@@ -72,12 +72,12 @@ const NavBar = ({ user, setShowModal }) => {
         ) : null}
         <div>
           {/* user profile */}
-          <a
+          {/* <a
             href="/profile"
             className="inline-block text-base px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-800 hover:bg-white mt-4 lg:mt-0"
           >
             Profile
-          </a>
+          </a> */}
         </div>
       </div>
     </nav>

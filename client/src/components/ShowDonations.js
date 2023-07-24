@@ -112,7 +112,7 @@ const ShowDonations = ({ charityId }) => {
                         scope="col"
                         className="px-6 py-3 text-center text-xs font-bold text-gray-500 uppercase "
                       >
-                        To
+                        Address
                       </th>
                       <th
                         scope="col"
@@ -140,8 +140,17 @@ const ShowDonations = ({ charityId }) => {
                           {donation.message}
                         </td>
                         <td className="px-6 py-4 text-base text-gray-800 whitespace-nowrap">
-                          {donation.txDetails.to.slice(0, 8)}...
-                          {donation.txDetails.to.slice(-8)}
+                          From:{" "}
+                          <span className="text-blue-600">
+                            {donation.txDetails.from.slice(0, 8)}...
+                            {donation.txDetails.from.slice(-8)}
+                          </span>{" "}
+                          <br />
+                          To:{" "}
+                          <span className="text-blue-600">
+                            {donation.txDetails.to.slice(0, 8)}...
+                            {donation.txDetails.to.slice(-8)}
+                          </span>
                         </td>
                         <td className="px-6 py-4 text-base font-medium text-right whitespace-nowrap">
                           <span

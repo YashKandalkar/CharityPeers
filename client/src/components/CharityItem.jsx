@@ -56,8 +56,19 @@ const CharityItem = ({
         >
           <span className="flex gap-1">
             Goal:
-            <EthToRealTooltip value={charity.goalAmount}>
-              <span className="font-bold">{charity.goalAmount}ETH</span>
+            <EthToRealTooltip
+              value={state.web3.utils.fromWei(
+                charity.goalAmount.toString(),
+                "ether"
+              )}
+            >
+              <span className="font-bold">
+                {state.web3.utils.fromWei(
+                  charity.goalAmount.toString(),
+                  "ether"
+                )}
+                ETH
+              </span>
             </EthToRealTooltip>{" "}
           </span>
           <span>
@@ -73,7 +84,10 @@ const CharityItem = ({
               charity.totalDonationAmount.toString(),
               "ether"
             ) /
-              charity.goalAmount) *
+              state.web3.utils.fromWei(
+                charity.goalAmount.toString(),
+                "ether"
+              )) *
             100
           ).toFixed(2)}
           darkTheme

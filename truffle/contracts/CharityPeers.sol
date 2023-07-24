@@ -48,6 +48,12 @@ contract CharityPeers {
         return users[_address].charityIds;
     }
 
+    function getUserDonationIds(
+        address _address
+    ) public view returns (uint256[] memory) {
+        return users[_address].donationIds;
+    }
+
     /*
      * DONATION
      * TODO: add docstring here

@@ -113,6 +113,7 @@ const DonationModal = ({
                   onChange={(e) => setDonationAmount(e.target.value)}
                   type="number"
                   className="rounded-md py-2 my-2  border-gray-400 p-2"
+                  min={0}
                   style={{ borderWidth: 1 }}
                 />
               </div>

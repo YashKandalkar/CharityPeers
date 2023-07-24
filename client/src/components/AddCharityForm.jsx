@@ -1,11 +1,15 @@
 import { useForm } from "react-hook-form";
+import { useEth } from "../contexts/EthContext";
 
 const AddCharityForm = ({ onSave, setShowModal }) => {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm();
+
+  const { state } = useEth();
 
   return (
     <form
@@ -112,6 +116,29 @@ const AddCharityForm = ({ onSave, setShowModal }) => {
         placeholder="Goal"
         {...register("Goal", { required: true })}
       />
+      <div className="flex flex-row gap-4 items-center">
+        <div>
+          Goal Amount in USD:{" "}
+          <span className="font-bold ml-2">
+            $
+            {(watch("Goal") * state.donationAmountInRealCurrency.usd).toFixed(
+              2
+            )}{" "}
+            /-
+          </span>
+        </div>
+
+        <div>
+          Goal Amount in INR:{"   "}
+          <span className="font-bold ml-2">
+            ₹
+            {(watch("Goal") * state.donationAmountInRealCurrency.inr).toFixed(
+              2
+            )}{" "}
+            /-
+          </span>
+        </div>
+      </div>
       {/*footer*/}
       <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
         <button
