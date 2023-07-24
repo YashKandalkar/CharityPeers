@@ -1,39 +1,38 @@
-# React Truffle Box
+# Charity Peers
+A secure, transparent and decentralised fundraising platform!
 
-This box comes with everything you need to start using Truffle to write, compile, test, and deploy smart contracts, and interact with them from a React app.
+![Screenshot from 2023-07-24 21-31-58](https://github.com/YashKandalkar/CharityPeers/assets/35102959/40dae8bb-c7b6-4bbf-92a7-2859a12fa02f)
+
+(Design taken from https://gofundme.com/)
+
+## Features 
+Charity Peers provides a simple interface to create, view and donate to charities!
+1. Create Charities:
+
+   ![Screenshot from 2023-07-24 21-36-03](https://github.com/YashKandalkar/CharityPeers/assets/35102959/fa232a3e-ac0a-411e-acea-8b7c207518ac)
+
+2. View all charities:
+
+   ![Screenshot from 2023-07-24 21-37-02](https://github.com/YashKandalkar/CharityPeers/assets/35102959/1b13c5dd-7af2-414c-8bc3-9ee4005d281d)
+
+3. Donate to a charity:
+
+   ![Screenshot from 2023-07-24 21-39-48](https://github.com/YashKandalkar/CharityPeers/assets/35102959/59f15437-6475-4588-bc68-aa7bb2bfb661)
+
+4. View all donations:
+   
+   ![Screenshot from 2023-07-24 21-41-55](https://github.com/YashKandalkar/CharityPeers/assets/35102959/60ddaaab-bee1-41f0-b883-8e5c83e66499)
+
+
+## Technoogy Stack:
+ReactJS, Truffle, Ganache (local blockchain), Web3.js, Metamask (Browser Extension)
 
 ## Installation
-
-First ensure you are in an empty directory.
-
-Run the `unbox` command using 1 of 2 ways.
-
-```sh
-# Install Truffle globally and run `truffle unbox`
-$ npm install -g truffle
-$ truffle unbox react
-```
-
-```sh
-# Alternatively, run `truffle unbox` via npx
-$ npx truffle unbox react
-```
-
-Start the react dev server.
-
+1. Install [Ganache](https://trufflesuite.com/ganache/) and create a new workspace.
+2. Install [Metamask](https://metamask.io/) and connect to the local network of Ganache.
+3. Run these commands for running the client app:
 ```sh
 $ cd client
+$ npm install
 $ npm start
 ```
-
-From there, follow the instructions on the hosted React app. It will walk you through using Truffle and Ganache to deploy the `SimpleStorage` contract, making calls to it, and sending transactions to change the contract's state.
-
-## FAQ
-
-- __How do I use this with Ganache (or any other network)?__
-
-  The Truffle project is set to deploy to Ganache by default. If you'd like to change this, it's as easy as modifying the Truffle config file! Check out [our documentation on adding network configurations](https://trufflesuite.com/docs/truffle/reference/configuration/#networks). From there, you can run `truffle migrate` pointed to another network, restart the React dev server, and see the change take place.
-
-- __Where can I find more resources?__
-
-  This Box is a sweet combo of [Truffle](https://trufflesuite.com) and [Webpack](https://webpack.js.org). Either one would be a great place to start!
